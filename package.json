@@ -1,0 +1,36 @@
+{
+  "version": "1.0.3",
+  "name": "nmsg-tcp",
+  "description": "TCP transport for nmsg",
+  "main": "dist/nmsg-tcp.min.js",
+  "keywords": [
+    "nmsg",
+    "nmsg-tcp",
+    "tcp",
+    "messenger",
+    "node-messenger",
+    "messenger",
+    "ipc",
+    "inter-process",
+    "communication",
+    "scoket",
+    "websocket",
+    "sockjs",
+    "socket.io"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streamich/nmsg-tcp"
+  },
+  "scripts": {
+    "mypublish": "npm run typing && npm run dist && npm publish",
+    "typing": "node ./dts.js",
+    "test": "mocha",
+    "dist-build": "webpack && echo module.exports= | cat - dist/webpack.js > dist/nmsg-tcp.js",
+    "dist-min": "uglifyjs dist/nmsg-tcp.js -o dist/nmsg-tcp.min.js --compress --mangle",
+    "dist": "npm run dist-build && npm run dist-min"
+  },
+  "devDependencies": {
+    "msgpack-lite": "0.1.17"
+  }
+}

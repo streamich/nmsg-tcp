@@ -1,0 +1,6 @@
+/dist/webpack.js
+/examples
+tsconfig.json
+/*.js
+/*.ts
+/*.d.ts
